@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<ENR_IN>
+  <EPA_NR_PROJECT rid="#1">
+    <id/>
+    <blg_use>{{ blg_use }}</blg_use>
+    <blg_part>{{ blg_part }}</blg_part>
+    <building_num>{{ building_num }}</building_num>
+    <blg_kaek/>
+  </EPA_NR_PROJECT>
+  <LIBRARIES rid="#2">
+    <id>Lib</id>
+    <lib_const>C:\Program Files (x86)\TEE\TEE_KENAK_1_31\EnrConstGr.xml</lib_const>
+    <lib_clim>C:\Program Files (x86)\TEE\TEE_KENAK_1_31\EnrClimateGR.xml</lib_clim>
+    <lib_fuel>C:\Program Files (x86)\TEE\TEE_KENAK_1_31\EnrFuelGr.xml</lib_fuel>
+  </LIBRARIES>
+  <BUILDING rid="1">
+    {% for param in blg_parameters -%}
+    <blg_parameter{{ loop.index }}1>{{ param }}</blg_parameter{{loop.index}}>
+    {% endfor -%}
+    <ZONE1 rid="1">
+      {% for param in zn_parameters -%}
+      <zn_parameter{{ loop.index }}1>{{ param }}</zn_parameter{{loop.index}}>
+      {% endfor -%}
+      <ENVELOPE rid="1">
+      </ENVELOPE>
+      <SYSTEM rid="1">
+        <heating rid="1">
+        </heating>
+        <cooling rid="1">
+        </cooling>
+        <humidification rid="1">
+        </humidification>
+        <ahu rid="1">
+        </ahu>
+        <dhw rid="1">
+        </dhw>
+        <solar_collector rid="1">
+        </solar_collector>
+        <lighting rid="1">
+        </lighting>
+      </SYSTEM>
+    </ZONE1>
+  </BUILDING>
+</ENR_IN>
