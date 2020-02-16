@@ -18,10 +18,12 @@ def parse_xlsx(filename):
     no_rows = sh.nrows
     parsed_data = {}
     parsed_data["opaque_rows"] = no_rows
-    for column_index in range(2, 18):
-        key = f"opaque_column{column_index - 1}"
+    parsed_data["opaque_column0"] = ""
+    for column_index in range(1, 17):
+        key = f"opaque_column{column_index}"
         try:
-            values = sh.col_values(column_index)
+            values = sh.col_values(column_index - 1)
+            values = ",".join(str(v) for v in values)
         except IndexError:
             values = "," * no_rows
         parsed_data[key] = values
