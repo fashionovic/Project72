@@ -48,12 +48,25 @@ def parse_xlsx_transp(filename):
         parsed_data[key] = values
     return parsed_data
 
+def parse_xlsx_etc(filename):
+    wb = xlrd.open_workbook(filename)
+    sh = wb.sheet_by_index(2)
+    parsed_data = {}
+    parsed_data["zn_parameter6"] = sh.cell(0, 0).value
+
+
+    return parsed_data
+
+
+
 def generate_json(excel_file, output_file):
     data = read_template()
     parsed_data_opaque = parse_xlsx_opaque(excel_file)
     parsed_data_transp = parse_xlsx_transp(excel_file)
+    parsed_data_etc = parse_xlsx_etc(excel_file)
     data.update(**parsed_data_opaque)
     data.update(**parsed_data_transp)
+    data.update(**parsed_data_etc)
     with open(output_file, "w") as fd:
         json.dump(data, fd, indent=2)
 
