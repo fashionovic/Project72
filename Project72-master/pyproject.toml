@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "project72"
+version = "0.1.0"
+description = ""
+authors = ["Panos Mavrogiorgos", "Vaggelis Matragkos"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+jinja2 = "^2.11.1"
+lxml = "^4.5.0"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

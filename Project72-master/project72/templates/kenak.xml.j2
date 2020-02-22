@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<ENR_IN>
+  <EPA_NR_PROJECT rid="#1">
+    <id/>
+    <blg_use>{{ blg_use }}</blg_use>
+    <blg_part>{{ blg_part }}</blg_part>
+    <building_num>{{ building_num }}</building_num>
+    <blg_kaek/>
+  </EPA_NR_PROJECT>
+  <LIBRARIES rid="#2">
+    <id>Lib</id>
+    <lib_const>C:\Program Files (x86)\TEE\TEE_KENAK_1_31\EnrConstGr.xml</lib_const>
+    <lib_clim>C:\Program Files (x86)\TEE\TEE_KENAK_1_31\EnrClimateGR.xml</lib_clim>
+    <lib_fuel>C:\Program Files (x86)\TEE\TEE_KENAK_1_31\EnrFuelGr.xml</lib_fuel>
+  </LIBRARIES>
+  <BUILDING rid="1">
+    {% for param in blg_parameters -%}
+    <blg_parameter{{ loop.index }}>{{ param }}</blg_parameter{{loop.index}}>
+    {% endfor -%}
+    <ZONE1 rid="1">
+      {% for param in zn_parameters -%}
+      <zn_parameter{{ loop.index }}>{{ param }}</zn_parameter{{loop.index}}>
+      {% endfor -%}
+      <ENVELOPE rid="1">
+
+        <opaque_rows>{{opaque_rows}}</opaque_rows>
+        <opaque_column1>{{opaque_column1}}</opaque_column1>
+        <opaque_column2>{{opaque_column2}}</opaque_column2>
+        <opaque_column3>{{opaque_column3}}</opaque_column3>
+        <opaque_column4>{{opaque_column4}}</opaque_column4>
+        <opaque_column5>{{opaque_column5}}</opaque_column5>
+        <opaque_column6>{{opaque_column6}}</opaque_column6>
+        <opaque_column7>{{opaque_column7}}</opaque_column7>
+        <opaque_column8>{{opaque_column8}}</opaque_column8>
+        <opaque_column9>{{opaque_column9}}</opaque_column9>
+        <opaque_column10>{{opaque_column10}}</opaque_column10>
+        <opaque_column11>{{opaque_column11}}</opaque_column11>
+        <opaque_column12>{{opaque_column12}}</opaque_column12>
+        <opaque_column13>{{opaque_column13}}</opaque_column13>
+        <opaque_column14>{{opaque_column14}}</opaque_column14>
+        <opaque_column15>{{opaque_column15}}</opaque_column15>
+        <opaque_column16>,,,,,,,,,,,,,,</opaque_column16>
+        <ground_rows>0</ground_rows>
+        <ground_column1/>
+        <ground_column2/>
+        <ground_column3/>
+        <ground_column4/>
+        <ground_column5/>
+        <ground_column6/>
+        <ground_column7/>
+        <ground_column8/>
+        <transparent_rows>{{transparent_rows}}</transparent_rows>
+        <transparent_column1>{{transparent_column1}}</transparent_column1>
+        <transparent_column2>{{transparent_column2}}</transparent_column2>
+        <transparent_column3>{{transparent_column3}}</transparent_column3>
+        <transparent_column4>{{transparent_column4}}</transparent_column4>
+        <transparent_column5>{{transparent_column5}}</transparent_column5>
+        <transparent_column6>{{transparent_column6}}</transparent_column6>
+        <transparent_column7>{{transparent_column7}}</transparent_column7>
+        <transparent_column8>{{transparent_column8}}</transparent_column8>
+        <transparent_column9>{{transparent_column9}}</transparent_column9>
+        <transparent_column10>{{transparent_column10}}</transparent_column10>
+        <transparent_column11>{{transparent_column11}}</transparent_column11>
+        <transparent_column12>{{transparent_column12}}</transparent_column12>
+        <transparent_column13>{{transparent_column13}}</transparent_column13>
+        <transparent_column14>{{transparent_column14}}</transparent_column14>
+        <transparent_column15>{{transparent_column15}}</transparent_column15>
+        </ENVELOPE>
+      <SYSTEM rid="1">
+        <heating rid="1">
+        </heating>
+        <cooling rid="1">
+        </cooling>
+        <humidification rid="1">
+        </humidification>
+        <ahu rid="1">
+        </ahu>
+        <dhw rid="1">
+        </dhw>
+        <solar_collector rid="1">
+        </solar_collector>
+        <lighting rid="1">
+        </lighting>
+      </SYSTEM>
+    </ZONE1>
+  </BUILDING>
+</ENR_IN>
